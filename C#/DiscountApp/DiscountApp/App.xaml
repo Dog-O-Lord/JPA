@@ -1,0 +1,9 @@
+﻿<Application x:Class="DiscountApp.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:DiscountApp"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ImageSource x:Key="DefaultImage">/Resource/DefaultIMG.png</ImageSource>
+    </Application.Resources>
+</Application>

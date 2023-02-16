@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ValiullinUpperativeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ClientOperatorChat">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="Message" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="User" Relationship="Self.FK_ClientOperatorChat_User" FromRole="ClientOperatorChat" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Hardware">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Amount" Type="Int32" />
+  </EntityType>
+  <EntityType Name="HardwarePurchase">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="PurchaseType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Amount" Type="Int32" />
+  </EntityType>
+  <EntityType Name="IssueAcceptance">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="Issue" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="User" Relationship="Self.FK_IssueAcceptance_User" FromRole="IssueAcceptance" ToRole="User" />
+  </EntityType>
+  <EntityType Name="IssueQualification">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Qualification" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="User" Relationship="Self.FK_User_IssueQualification" FromRole="IssueQualification" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Office">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Adress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TechnicalIssues">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="IssueDescription" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="OperatorId" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleId" Type="Int32" />
+    <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OfficeId" Type="Int32" />
+    <Property Name="IssueId" Type="Int32" />
+    <Property Name="QualId" Type="Int32" />
+    <NavigationProperty Name="ClientOperatorChat" Relationship="Self.FK_ClientOperatorChat_User" FromRole="User" ToRole="ClientOperatorChat" />
+    <NavigationProperty Name="IssueAcceptance" Relationship="Self.FK_IssueAcceptance_User" FromRole="User" ToRole="IssueAcceptance" />
+    <NavigationProperty Name="IssueQualification" Relationship="Self.FK_User_IssueQualification" FromRole="User" ToRole="IssueQualification" />
+    <NavigationProperty Name="UserRole" Relationship="Self.FK_User_UserRole" FromRole="User" ToRole="UserRole" />
+  </EntityType>
+  <EntityType Name="UserRole">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="User" Relationship="Self.FK_User_UserRole" FromRole="UserRole" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Warehouse">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Adress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_ClientOperatorChat_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="ClientOperatorChat" Type="Self.ClientOperatorChat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ClientOperatorChat">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IssueAcceptance_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="IssueAcceptance" Type="Self.IssueAcceptance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="IssueAcceptance">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_IssueQualification">
+    <End Role="IssueQualification" Type="Self.IssueQualification" Multiplicity="0..1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="IssueQualification">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="QualId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_UserRole">
+    <End Role="UserRole" Type="Self.UserRole" Multiplicity="0..1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserRole">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ValiullinUpperativeEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ClientOperatorChat" EntityType="Self.ClientOperatorChat" />
+    <EntitySet Name="Hardware" EntityType="Self.Hardware" />
+    <EntitySet Name="HardwarePurchase" EntityType="Self.HardwarePurchase" />
+    <EntitySet Name="IssueAcceptance" EntityType="Self.IssueAcceptance" />
+    <EntitySet Name="IssueQualification" EntityType="Self.IssueQualification" />
+    <EntitySet Name="Office" EntityType="Self.Office" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="TechnicalIssues" EntityType="Self.TechnicalIssues" />
+    <EntitySet Name="User" EntityType="Self.User" />
+    <EntitySet Name="UserRole" EntityType="Self.UserRole" />
+    <EntitySet Name="Warehouse" EntityType="Self.Warehouse" />
+    <AssociationSet Name="FK_ClientOperatorChat_User" Association="Self.FK_ClientOperatorChat_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="ClientOperatorChat" EntitySet="ClientOperatorChat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IssueAcceptance_User" Association="Self.FK_IssueAcceptance_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="IssueAcceptance" EntitySet="IssueAcceptance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_IssueQualification" Association="Self.FK_User_IssueQualification">
+      <End Role="IssueQualification" EntitySet="IssueQualification" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_UserRole" Association="Self.FK_User_UserRole">
+      <End Role="UserRole" EntitySet="UserRole" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

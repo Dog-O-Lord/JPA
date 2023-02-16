@@ -1,0 +1,6 @@
+Y:\Валиуллин Эмиль\C#\BuscketApp\BuscketApp\obj\Debug\BuscketApp.csproj.AssemblyReference.cache
+Y:\Валиуллин Эмиль\C#\BuscketApp\BuscketApp\obj\Debug\MainWindow.g.cs
+Y:\Валиуллин Эмиль\C#\BuscketApp\BuscketApp\obj\Debug\Pages\BuscketPage.g.cs
+Y:\Валиуллин Эмиль\C#\BuscketApp\BuscketApp\obj\Debug\App.g.cs
+Y:\Валиуллин Эмиль\C#\BuscketApp\BuscketApp\obj\Debug\BuscketApp_MarkupCompile.cache
+Y:\Валиуллин Эмиль\C#\BuscketApp\BuscketApp\obj\Debug\BuscketApp_MarkupCompile.lref

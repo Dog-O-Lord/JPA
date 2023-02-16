@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище ValiullinUpperativeModelContainer" CdmEntityContainer="ValiullinUpperativeEntities">
+    <EntitySetMapping Name="ClientOperatorChat">
+      <EntityTypeMapping TypeName="ValiullinUpperativeModel.ClientOperatorChat">
+        <MappingFragment StoreEntitySet="ClientOperatorChat">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hardware">
+      <EntityTypeMapping TypeName="ValiullinUpperativeModel.Hardware">
+        <MappingFragment StoreEntitySet="Hardware">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HardwarePurchase">
+      <EntityTypeMapping TypeName="ValiullinUpperativeModel.HardwarePurchase">
+        <MappingFragment StoreEntitySet="HardwarePurchase">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="PurchaseType" ColumnName="PurchaseType" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IssueAcceptance">
+      <EntityTypeMapping TypeName="ValiullinUpperativeModel.IssueAcceptance">
+        <MappingFragment StoreEntitySet="IssueAcceptance">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Issue" ColumnName="Issue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IssueQualification">
+      <EntityTypeMapping TypeName="ValiullinUpperativeModel.IssueQualification">
+        <MappingFragment StoreEntitySet="IssueQualification">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Qualification" ColumnName="Qualification" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Office">
+      <EntityTypeMapping TypeName="ValiullinUpperativeModel.Office">
+        <MappingFragment StoreEntitySet="Office">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Adress" ColumnName="Adress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="ValiullinUpperativeModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TechnicalIssues">
+      <EntityTypeMapping TypeName="ValiullinUpperativeModel.TechnicalIssues">
+        <MappingFragment StoreEntitySet="TechnicalIssues">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="IssueDescription" ColumnName="IssueDescription" />
+          <ScalarProperty Name="OperatorId" ColumnName="OperatorId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="ValiullinUpperativeModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="OfficeId" ColumnName="OfficeId" />
+          <ScalarProperty Name="IssueId" ColumnName="IssueId" />
+          <ScalarProperty Name="QualId" ColumnName="QualId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserRole">
+      <EntityTypeMapping TypeName="ValiullinUpperativeModel.UserRole">
+        <MappingFragment StoreEntitySet="UserRole">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Warehouse">
+      <EntityTypeMapping TypeName="ValiullinUpperativeModel.Warehouse">
+        <MappingFragment StoreEntitySet="Warehouse">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Adress" ColumnName="Adress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

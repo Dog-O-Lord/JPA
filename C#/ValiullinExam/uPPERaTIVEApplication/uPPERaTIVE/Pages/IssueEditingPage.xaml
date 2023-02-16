@@ -1,0 +1,28 @@
+﻿<Page x:Class="uPPERaTIVE.Pages.IssueEditingPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:uPPERaTIVE.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="IssueEditingPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="1" VerticalAlignment="Center">
+            <TextBlock/>
+            <TextBox Text="{Binding id}" IsReadOnly="True"/>
+            <TextBlock/>
+            <ComboBox x:Name="UserCB" SelectedItem="{Binding User.Name}" DisplayMemberPath="Name"/>
+            <TextBlock/>
+            <TextBox Text="{Binding Issue}"/>
+            <Button x:Name="SubmitBtn" Content="Submit" Click="SubmitBtn_Click"/>
+            <Button x:Name="GoBackBtn" Content="Go back" Click="GoBackBtn_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>

@@ -1,0 +1,30 @@
+﻿<Page x:Class="uPPERaTIVE.Pages.OperatorMainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:uPPERaTIVE.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="OperatorMainPage" Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.3*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel>
+            <Button x:Name="AddIssue" Content="Add New Issue" Click="AddIssue_Click"/>
+            <Button x:Name="EditIssue" Content="Edit Issue" Click="EditIssue_Click"/>
+            <Button x:Name="DeleteIssue" Content="Delete Issue" Click="DeleteIssue_Click"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+            <DataGrid x:Name="IssueDG" ColumnWidth="*" AutoGenerateColumns="False" IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Issue Id" Binding="{Binding id}"/>
+                    <DataGridTextColumn Header="Issue Description" Binding="{Binding Issue}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Page>

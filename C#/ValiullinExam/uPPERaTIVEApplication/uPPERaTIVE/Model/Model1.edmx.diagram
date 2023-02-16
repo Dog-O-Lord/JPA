@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1a6529e3c5e54e0286c35551e54e73a7" Name="Diagram1">
+        <EntityTypeShape EntityType="ValiullinUpperativeModel.ClientOperatorChat" Width="1.5" PointX="5.25" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ValiullinUpperativeModel.Hardware" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ValiullinUpperativeModel.HardwarePurchase" Width="1.5" PointX="2.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ValiullinUpperativeModel.IssueAcceptance" Width="1.5" PointX="5.25" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ValiullinUpperativeModel.IssueQualification" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ValiullinUpperativeModel.Office" Width="1.5" PointX="4.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ValiullinUpperativeModel.sysdiagrams" Width="1.5" PointX="6.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ValiullinUpperativeModel.TechnicalIssues" Width="1.5" PointX="7.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ValiullinUpperativeModel.User" Width="1.5" PointX="3" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ValiullinUpperativeModel.UserRole" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ValiullinUpperativeModel.Warehouse" Width="1.5" PointX="7.75" PointY="5.125" IsExpanded="true" />
+        <AssociationConnector Association="ValiullinUpperativeModel.FK_ClientOperatorChat_User" ManuallyRouted="false" />
+        <AssociationConnector Association="ValiullinUpperativeModel.FK_IssueAcceptance_User" ManuallyRouted="false" />
+        <AssociationConnector Association="ValiullinUpperativeModel.FK_User_IssueQualification" ManuallyRouted="false" />
+        <AssociationConnector Association="ValiullinUpperativeModel.FK_User_UserRole" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
